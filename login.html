@@ -1,0 +1,54 @@
+<head>
+<title>Login - MoonClub South Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+ 
+
+<script>
+
+//paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
+
+<style>
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://loudpack.co.za/loading.gif) center no-repeat #fff;
+}
+</style>
+
+
+<div class="se-pre-con"></div>
+
+  <!-- Start the login flow just by including this script tag! -->
+  <script async="async" src="https://auth.magic.link/pnp/login"
+    data-magic-publishable-api-key="pk_live_39FE65D037A0DDA3"
+    data-terms-of-service-uri="/terms"
+  data-privacy-policy-uri="/privacy" 
+    data-redirect-uri="/start">
+  </script>
+
+
+
+</head>
+<body>
+<div class="se-pre-con"></div>
+</div>
+</body>
