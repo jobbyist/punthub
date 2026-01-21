@@ -242,6 +242,7 @@
       resize: vertical;
       min-height: 100px;
       margin-bottom: 10px;
+      box-sizing: border-box;
     }
     
     .comment-form textarea:focus {
@@ -488,6 +489,7 @@
     // Render platforms
     function renderPlatforms() {
       const grid = document.getElementById('platformsGrid');
+      grid.innerHTML = ''; // Clear existing content
       
       platforms.forEach(platform => {
         const ratings = getRatings(platform.id);
@@ -508,7 +510,7 @@
             <a href="${platform.url}" target="_blank" rel="noopener noreferrer" class="btn-register">
               Register Now
             </a>
-            <button class="btn-comment" onclick="openCommentModal(${platform.id}, '${platform.name}')">
+            <button class="btn-comment" data-platform-id="${platform.id}">
               <span class="comment-icon">💬</span>
               <span>${commentsCount}</span>
             </button>
@@ -516,6 +518,12 @@
         `;
         
         grid.appendChild(card);
+        
+        // Add comment button click handler for this card
+        const commentBtn = card.querySelector('.btn-comment');
+        commentBtn.addEventListener('click', () => {
+          openCommentModal(platform.id, platform.name);
+        });
       });
       
       // Add rating click handlers
@@ -524,7 +532,37 @@
           const rating = parseInt(this.dataset.rating);
           const platformId = parseInt(this.closest('.star-rating').dataset.platform);
           saveRating(platformId, rating);
-          renderPlatforms();
+          
+          // Update only the specific rating section instead of re-rendering all
+          const ratingSection = this.closest('.rating-section');
+          const ratings = getRatings(platformId);
+          ratingSection.innerHTML = createStarRating(platformId, ratings);
+          
+          // Re-attach handlers for the updated section
+          ratingSection.querySelectorAll('.star').forEach(s => {
+            s.addEventListener('click', function() {
+              const r = parseInt(this.dataset.rating);
+              const pId = parseInt(this.closest('.star-rating').dataset.platform);
+              saveRating(pId, r);
+              const rs = this.closest('.rating-section');
+              const ratings = getRatings(pId);
+              rs.innerHTML = createStarRating(pId, ratings);
+              attachRatingHandlers(rs);
+            });
+            
+            s.addEventListener('mouseenter', function() {
+              const r = parseInt(this.dataset.rating);
+              const stars = this.closest('.star-rating').querySelectorAll('.star');
+              stars.forEach((s, index) => {
+                s.classList.toggle('hover', index < r);
+              });
+            });
+            
+            s.addEventListener('mouseleave', function() {
+              const stars = this.closest('.star-rating').querySelectorAll('.star');
+              stars.forEach(s => s.classList.remove('hover'));
+            });
+          });
         });
         
         star.addEventListener('mouseenter', function() {
@@ -558,12 +596,21 @@
         commentFormDiv.innerHTML = '';
       } else {
         authCheck.innerHTML = '';
-        commentFormDiv.innerHTML = `
-          <div class="comment-form">
-            <textarea id="commentText" placeholder="Share your experience with ${platformName}..."></textarea>
-            <button onclick="submitComment(${platformId})">Post Comment</button>
-          </div>
-        `;
+        const textarea = document.createElement('textarea');
+        textarea.id = 'commentText';
+        textarea.placeholder = `Share your experience with ${platformName}...`;
+        
+        const button = document.createElement('button');
+        button.textContent = 'Post Comment';
+        button.addEventListener('click', () => submitComment(platformId));
+        
+        const form = document.createElement('div');
+        form.className = 'comment-form';
+        form.appendChild(textarea);
+        form.appendChild(button);
+        
+        commentFormDiv.innerHTML = '';
+        commentFormDiv.appendChild(form);
       }
       
       renderComments(platformId);
@@ -585,16 +632,35 @@
       const commentsList = document.getElementById('commentsList');
       const comments = getComments(platformId);
       
+      commentsList.innerHTML = ''; // Clear first
+      
       if (comments.length === 0) {
-        commentsList.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your experience!</div>';
+        const noComments = document.createElement('div');
+        noComments.className = 'no-comments';
+        noComments.textContent = 'No comments yet. Be the first to share your experience!';
+        commentsList.appendChild(noComments);
       } else {
-        commentsList.innerHTML = comments.map(comment => `
-          <div class="comment-item">
-            <div class="comment-author">${comment.author}</div>
-            <div class="comment-date">${new Date(comment.date).toLocaleDateString()}</div>
-            <div class="comment-text">${comment.text}</div>
-          </div>
-        `).join('');
+        comments.forEach(comment => {
+          const item = document.createElement('div');
+          item.className = 'comment-item';
+          
+          const author = document.createElement('div');
+          author.className = 'comment-author';
+          author.textContent = comment.author;
+          
+          const date = document.createElement('div');
+          date.className = 'comment-date';
+          date.textContent = new Date(comment.date).toLocaleDateString();
+          
+          const text = document.createElement('div');
+          text.className = 'comment-text';
+          text.textContent = comment.text; // Use textContent to prevent XSS
+          
+          item.appendChild(author);
+          item.appendChild(date);
+          item.appendChild(text);
+          commentsList.appendChild(item);
+        });
       }
     }
 
