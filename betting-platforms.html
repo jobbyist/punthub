@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-za" data-wf-domain="cmc-earn.webflow.io" data-wf-page="betting-platforms" data-wf-site="5f15b50525745912903311ad">
+<head>
+  <meta charset="utf-8">
+  <title>Betting Platforms in South Africa | PuntHub</title>
+  <meta content="Discover and compare the top 25+ online betting and gambling platforms in South Africa. Rate platforms and share your experiences with the community." name="description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link href="https://assets-global.website-files.com/5f15b50525745912903311ad/css/cmc-earn.75d74bb80.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/modal.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    WebFont.load({  google: {    families: ["Inter:regular,500,600,700"]  }});
+  </script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217894452-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-217894452-1');
+  </script>
+  
+  <link rel="manifest" href="/manifest.json">
+  
+  <style>
+    body {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    
+    .page-header p {
+      font-size: 1.2em;
+      margin: 0;
+      opacity: 0.9;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .back-link:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .platform-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .platform-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .platform-name {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin: 0;
+      color: #333;
+    }
+    
+    .platform-rank {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9em;
+    }
+    
+    .platform-description {
+      color: #666;
+      margin: 10px 0;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    
+    .rating-section {
+      margin: 15px 0;
+      padding: 10px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .star-rating {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+    
+    .star {
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #ddd;
+      transition: color 0.2s;
+    }
+    
+    .star.active,
+    .star.hover {
+      color: #ffc107;
+    }
+    
+    .rating-info {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 5px;
+    }
+    
+    .platform-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .btn-register {
+      flex: 1;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-weight: 600;
+      transition: opacity 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-register:hover {
+      opacity: 0.9;
+    }
+    
+    .btn-comment {
+      background: white;
+      border: 2px solid #667eea;
+      color: #667eea;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    
+    .btn-comment:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .comment-icon {
+      font-size: 1.2em;
+    }
+    
+    .popup {
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .popup h2 {
+      color: #667eea;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 10px;
+    }
+    
+    .comment-form {
+      margin-bottom: 20px;
+    }
+    
+    .comment-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1em;
+      resize: vertical;
+      min-height: 100px;
+      margin-bottom: 10px;
+    }
+    
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .comment-form button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    
+    .comment-form button:hover {
+      opacity: 0.9;
+    }
+    
+    .comments-list {
+      margin-top: 20px;
+    }
+    
+    .comment-item {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .comment-author {
+      font-weight: 600;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+    
+    .comment-date {
+      font-size: 0.8em;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    
+    .comment-text {
+      color: #333;
+      line-height: 1.5;
+    }
+    
+    .no-comments {
+      text-align: center;
+      color: #999;
+      padding: 20px;
+      font-style: italic;
+    }
+    
+    .auth-required {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .auth-required a {
+      color: #667eea;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .auth-required a:hover {
+      text-decoration: underline;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .page-header h1 {
+        font-size: 1.8em;
+      }
+      
+      .platforms-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .platform-actions {
+        flex-direction: column;
+      }
+      
+      .btn-comment {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-header">
+    <div class="container">
+      <h1>🎰 Betting Platforms in South Africa</h1>
+      <p>Compare and rate the top online betting and gambling platforms</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <a href="/index.html" class="back-link">← Back to Home</a>
+    
+    <div class="platforms-grid" id="platformsGrid">
+      <!-- Platforms will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <!-- Comment Modal Template -->
+  <div id="commentModal" class="overlay">
+    <div class="popup">
+      <h2 id="modalTitle">Comments</h2>
+      <a class="close" href="#" onclick="closeModal()">&times;</a>
+      <div class="content">
+        <div id="authCheck"></div>
+        <div id="commentForm"></div>
+        <div class="comments-list" id="commentsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Platform data
+    const platforms = [
+      { id: 1, name: 'Betway', url: 'https://www.betway.co.za/', description: 'One of South Africa\'s most popular sports betting platforms with extensive markets.' },
+      { id: 2, name: 'HollywoodBets', url: 'https://www.hollywoodbets.net/', description: 'Leading South African bookmaker with sports betting and casino games.' },
+      { id: 3, name: 'Jackpot City', url: 'https://www.jackpotcitycasino.com/', description: 'Premier online casino with a wide range of slots and table games.' },
+      { id: 4, name: 'PlayLive', url: 'https://www.playlive.co.za/', description: 'Live dealer casino games and sports betting platform.' },
+      { id: 5, name: 'SportingBet', url: 'https://www.sportingbet.co.za/', description: 'Comprehensive sports betting with competitive odds.' },
+      { id: 6, name: 'Easy Bet', url: 'https://www.easybet.co.za/', description: 'User-friendly betting platform with quick registration and payouts.' },
+      { id: 7, name: '10bet', url: 'https://www.10bet.co.za/', description: 'International betting platform with a strong South African presence.' },
+      { id: 8, name: 'World Sports Betting', url: 'https://www.worldsportsbetting.co.za/', description: 'South African-based betting company with extensive sports coverage.' },
+      { id: 9, name: 'Supabets', url: 'https://www.supabets.co.za/', description: 'Growing betting platform with competitive odds and bonuses.' },
+      { id: 10, name: 'YesPlay', url: 'https://www.yesplay.bet/', description: 'Modern betting platform with sports and casino options.' },
+      { id: 11, name: 'Betfred', url: 'https://www.betfred.com/', description: 'Established UK bookmaker with South African operations.' },
+      { id: 12, name: 'Bettabets', url: 'https://www.bettabets.co.za/', description: 'Local betting platform with focus on South African sports.' },
+      { id: 13, name: 'Mzansibet', url: 'https://www.mzansibet.co.za/', description: 'South African-owned betting platform with local focus.' },
+      { id: 14, name: 'Bet.co.za', url: 'https://www.bet.co.za/', description: 'Simple and straightforward betting platform.' },
+      { id: 15, name: 'BetXchange', url: 'https://www.betxchange.co.za/', description: 'Betting exchange platform for peer-to-peer betting.' },
+      { id: 16, name: 'Interbet', url: 'https://www.interbet.co.za/', description: 'Long-standing South African betting operator.' },
+      { id: 17, name: 'Gbets', url: 'https://www.gbets.co.za/', description: 'Popular South African betting site with casino games.' },
+      { id: 18, name: 'Sunbet', url: 'https://www.sunbet.co.za/', description: 'Part of Sun International, offering sports betting and casino.' },
+      { id: 19, name: 'Tab4Racing', url: 'https://www.tab4racing.co.za/', description: 'Dedicated horse racing betting platform.' },
+      { id: 20, name: 'Lottostar', url: 'https://www.lottostar.co.za/', description: 'Online lottery and betting platform.' },
+      { id: 21, name: 'Lottoland', url: 'https://www.lottoland.co.za/', description: 'Bet on international lotteries from South Africa.' },
+      { id: 22, name: 'Marshalls World of Sport', url: 'https://www.marshalls.co.za/', description: 'Traditional South African betting operator with modern platform.' },
+      { id: 23, name: 'Netbet', url: 'https://www.netbet.co.za/', description: 'International operator with comprehensive betting options.' },
+      { id: 24, name: 'Lula Bets', url: 'https://www.lulabets.co.za/', description: 'New generation betting platform with modern features.' },
+      { id: 25, name: 'Kingbets', url: 'https://www.kingbets.co.za/', description: 'Emerging betting platform with competitive markets.' }
+    ];
+
+    // Initialize data storage
+    function initializeStorage() {
+      if (!localStorage.getItem('platformRatings')) {
+        localStorage.setItem('platformRatings', JSON.stringify({}));
+      }
+      if (!localStorage.getItem('platformComments')) {
+        localStorage.setItem('platformComments', JSON.stringify({}));
+      }
+    }
+
+    // Check if user is logged in (Magic.link integration)
+    function isLoggedIn() {
+      // Check for Magic.link token or session
+      // This is a simplified check - in production, verify with Magic.link SDK
+      return localStorage.getItem('magicAuthToken') !== null;
+    }
+
+    // Get user email (from Magic.link)
+    function getUserEmail() {
+      return localStorage.getItem('magicUserEmail') || 'Anonymous User';
+    }
+
+    // Get platform ratings
+    function getRatings(platformId) {
+      const ratings = JSON.parse(localStorage.getItem('platformRatings') || '{}');
+      return ratings[platformId] || { total: 0, count: 0, userRating: 0 };
+    }
+
+    // Save platform rating
+    function saveRating(platformId, rating) {
+      const ratings = JSON.parse(localStorage.getItem('platformRatings') || '{}');
+      const current = ratings[platformId] || { total: 0, count: 0, userRating: 0 };
+      
+      // Remove previous user rating if exists
+      if (current.userRating > 0) {
+        current.total -= current.userRating;
+        current.count -= 1;
+      }
+      
+      // Add new rating
+      current.total += rating;
+      current.count += 1;
+      current.userRating = rating;
+      
+      ratings[platformId] = current;
+      localStorage.setItem('platformRatings', JSON.stringify(ratings));
+    }
+
+    // Get platform comments
+    function getComments(platformId) {
+      const comments = JSON.parse(localStorage.getItem('platformComments') || '{}');
+      return comments[platformId] || [];
+    }
+
+    // Save platform comment
+    function saveComment(platformId, comment) {
+      const comments = JSON.parse(localStorage.getItem('platformComments') || '{}');
+      const platformComments = comments[platformId] || [];
+      
+      platformComments.unshift({
+        author: getUserEmail(),
+        text: comment,
+        date: new Date().toISOString()
+      });
+      
+      comments[platformId] = platformComments;
+      localStorage.setItem('platformComments', JSON.stringify(comments));
+    }
+
+    // Create star rating HTML
+    function createStarRating(platformId, currentRating) {
+      const average = currentRating.count > 0 ? (currentRating.total / currentRating.count).toFixed(1) : 0;
+      const userRating = currentRating.userRating || 0;
+      
+      let html = '<div class="star-rating" data-platform="' + platformId + '">';
+      for (let i = 1; i <= 5; i++) {
+        const active = i <= userRating ? 'active' : '';
+        html += '<span class="star ' + active + '" data-rating="' + i + '">★</span>';
+      }
+      html += '</div>';
+      html += '<div class="rating-info">';
+      html += 'Average: ' + average + '/5 (' + currentRating.count + ' ratings)';
+      html += '</div>';
+      
+      return html;
+    }
+
+    // Render platforms
+    function renderPlatforms() {
+      const grid = document.getElementById('platformsGrid');
+      
+      platforms.forEach(platform => {
+        const ratings = getRatings(platform.id);
+        const commentsCount = getComments(platform.id).length;
+        
+        const card = document.createElement('div');
+        card.className = 'platform-card';
+        card.innerHTML = `
+          <div class="platform-header">
+            <h2 class="platform-name">${platform.name}</h2>
+            <div class="platform-rank">${platform.id}</div>
+          </div>
+          <p class="platform-description">${platform.description}</p>
+          <div class="rating-section">
+            ${createStarRating(platform.id, ratings)}
+          </div>
+          <div class="platform-actions">
+            <a href="${platform.url}" target="_blank" rel="noopener noreferrer" class="btn-register">
+              Register Now
+            </a>
+            <button class="btn-comment" onclick="openCommentModal(${platform.id}, '${platform.name}')">
+              <span class="comment-icon">💬</span>
+              <span>${commentsCount}</span>
+            </button>
+          </div>
+        `;
+        
+        grid.appendChild(card);
+      });
+      
+      // Add rating click handlers
+      document.querySelectorAll('.star').forEach(star => {
+        star.addEventListener('click', function() {
+          const rating = parseInt(this.dataset.rating);
+          const platformId = parseInt(this.closest('.star-rating').dataset.platform);
+          saveRating(platformId, rating);
+          renderPlatforms();
+        });
+        
+        star.addEventListener('mouseenter', function() {
+          const rating = parseInt(this.dataset.rating);
+          const stars = this.closest('.star-rating').querySelectorAll('.star');
+          stars.forEach((s, index) => {
+            s.classList.toggle('hover', index < rating);
+          });
+        });
+        
+        star.addEventListener('mouseleave', function() {
+          const stars = this.closest('.star-rating').querySelectorAll('.star');
+          stars.forEach(s => s.classList.remove('hover'));
+        });
+      });
+    }
+
+    // Open comment modal
+    function openCommentModal(platformId, platformName) {
+      document.getElementById('modalTitle').textContent = platformName + ' - Comments';
+      
+      const authCheck = document.getElementById('authCheck');
+      const commentFormDiv = document.getElementById('commentForm');
+      
+      if (!isLoggedIn()) {
+        authCheck.innerHTML = `
+          <div class="auth-required">
+            Please <a href="/login.html">log in</a> to leave a comment.
+          </div>
+        `;
+        commentFormDiv.innerHTML = '';
+      } else {
+        authCheck.innerHTML = '';
+        commentFormDiv.innerHTML = `
+          <div class="comment-form">
+            <textarea id="commentText" placeholder="Share your experience with ${platformName}..."></textarea>
+            <button onclick="submitComment(${platformId})">Post Comment</button>
+          </div>
+        `;
+      }
+      
+      renderComments(platformId);
+      window.location.hash = 'commentModal';
+    }
+
+    // Submit comment
+    function submitComment(platformId) {
+      const commentText = document.getElementById('commentText').value.trim();
+      if (commentText) {
+        saveComment(platformId, commentText);
+        document.getElementById('commentText').value = '';
+        renderComments(platformId);
+      }
+    }
+
+    // Render comments
+    function renderComments(platformId) {
+      const commentsList = document.getElementById('commentsList');
+      const comments = getComments(platformId);
+      
+      if (comments.length === 0) {
+        commentsList.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your experience!</div>';
+      } else {
+        commentsList.innerHTML = comments.map(comment => `
+          <div class="comment-item">
+            <div class="comment-author">${comment.author}</div>
+            <div class="comment-date">${new Date(comment.date).toLocaleDateString()}</div>
+            <div class="comment-text">${comment.text}</div>
+          </div>
+        `).join('');
+      }
+    }
+
+    // Close modal
+    function closeModal() {
+      window.location.hash = '';
+    }
+
+    // Initialize page
+    initializeStorage();
+    renderPlatforms();
+
+    // Check for Magic.link authentication on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      // Try to get Magic.link user info if available
+      if (window.Magic) {
+        window.Magic.user.isLoggedIn().then(isLoggedIn => {
+          if (isLoggedIn) {
+            window.Magic.user.getMetadata().then(metadata => {
+              localStorage.setItem('magicAuthToken', 'true');
+              localStorage.setItem('magicUserEmail', metadata.email);
+            });
+          }
+        }).catch(err => {
+          console.log('Magic.link not available');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
